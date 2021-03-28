@@ -1,0 +1,50 @@
+<!-- Worked with cass and hayden-->
+
+<!doctype html>
+<html>
+<head>
+    <title>Stariebucks</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+
+    <div class="jumbotron text-center">
+        <h2>Stariebucks</h2>
+        
+
+        <h3>Barista's Login or Signup:</h3>
+
+        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>Login</a>
+        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>Signup</a>
+
+    </div>
+
+</div>
+
+<section class="cashierContainer">
+
+
+   <div class="baristaCorner">
+     <h2>Enter Order Below</h2>
+   </div>
+   <form class="baristaCorner"action="/messages" method="POST">
+     <input class="nameP" type="text" value="" placeholder="Name of Customer" name="name">
+     <input class="orderP" type="text" placeholder="Type of Item" name="item" >
+     <br>
+    
+     <select class="size" name="size">
+       <option value="Small">Tall</option>
+       <option value="Medium">Grande</option>
+       <option value="Large">Venti</option>
+     </select>
+
+     <button type="submit">Submit</button>
+   </form>
+   <img src="img/source.gif" alt="bobaS">
+
+   </section>
+</body>
+</html>

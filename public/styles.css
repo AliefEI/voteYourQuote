@@ -1,0 +1,12 @@
+body{
+  background: rgb(0, 225, 255);
+}
+h3{
+  margin-top: 40px;
+}
+.hide{
+  display: none;
+}
+.name{
+  color: red;
+}

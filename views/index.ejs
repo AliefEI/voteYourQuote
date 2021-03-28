@@ -1,50 +1,40 @@
-<!-- Worked with cass and hayden-->
-
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <title>Stariebucks</title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>Quotes</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
+  <h1>Vote a quote</h1>
 
-    <div class="jumbotron text-center">
-        <h2>Stariebucks</h2>
-        
+  <form action="/messages" method="POST">
+    <input type="text" placeholder="Name" name="name">
+    <input type="text" placeholder="Enter your Quote" name="quote">
+    <button type="submit">Submit</button>
+  </form>
+  
+  <ul class="messages">
+  <% for(var i=0; i<messages.length; i++) {%>
+    <li class="message">
+      <span style= "color: <%= messages[i].color %>"><%= messages[i].name %></span>
+      <span style= "color: <%= messages[i].color %>"><%= messages[i].quote %></span>
+      <span class="hide"><%= messages[i].thumbUp %></span>
+      <span class="hide"><%= messages[i].thumbDown %></span> 
+      <span><%= messages[i].thumbUp-messages[i].thumbDown %></span>
+      <span><i class="fa fa-thumbs-up" aria-hidden="true"></i></span>
+      <span><i class="fa fa-thumbs-down" aria-hidden="true"></i></span>
+      <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+      <button class="change">Change Text To Blue <%= messages[i].changeColor %></button>
+    </li>
+  <% } %>
+  </ul>
 
-        <h3>Barista's Login or Signup:</h3>
-
-        <a href="/login" class="btn btn-default"><span class="fa fa-user"></span>Login</a>
-        <a href="/signup" class="btn btn-default"><span class="fa fa-user"></span>Signup</a>
-
-    </div>
-
-</div>
-
-<section class="cashierContainer">
 
 
-   <div class="baristaCorner">
-     <h2>Enter Order Below</h2>
-   </div>
-   <form class="baristaCorner"action="/messages" method="POST">
-     <input class="nameP" type="text" value="" placeholder="Name of Customer" name="name">
-     <input class="orderP" type="text" placeholder="Type of Item" name="item" >
-     <br>
-    
-     <select class="size" name="size">
-       <option value="Small">Tall</option>
-       <option value="Medium">Grande</option>
-       <option value="Large">Venti</option>
-     </select>
+  <script src="main.js"></script>
 
-     <button type="submit">Submit</button>
-   </form>
-   <img src="img/source.gif" alt="bobaS">
-
-   </section>
 </body>
 </html>
